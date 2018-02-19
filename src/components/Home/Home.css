@@ -1,0 +1,35 @@
+.home-container {
+  display:flex;
+  justify-content: center;
+}
+
+.case-list {
+  flex: 0 0 600px;
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.case-item {
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+.case-item-new {
+  position: relative;
+}
+
+.case-item-new button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+  right: -20px;
+  bottom: -20px;
+  cursor: pointer;
+}
