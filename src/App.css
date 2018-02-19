@@ -1,11 +1,18 @@
-.App {
-  text-align: center;
+.app-container {
+  padding: 15px;
 }
 
-.App-title {
-  font-size: 1.5em;
+input {
+  width: 100%;
+  border: none;
+  height: 32px;
+  text-indent: 10px;
 }
 
-.App-intro {
-  font-size: large;
+input:focus {
+  outline: none;
+}
+
+input.dashed {
+  border: 1px dashed black;
 }
