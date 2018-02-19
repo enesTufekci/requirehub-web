@@ -9,7 +9,7 @@ class Home extends Component {
         <div className="case-list">
           <div className="case-item case-item-new">
             <input type="text" placeholder="My First Requirement"/>
-            <button>+</button>
+            <button className="circle black">+</button>
           </div>
         </div>
       </div>
