@@ -1,6 +1,9 @@
 .app-container {
   padding: 15px;
 }
+a {
+  text-decoration: none;
+}
 
 input {
   width: 100%;
@@ -21,7 +24,7 @@ button:focus {
   outline: none;
 }
 
-button.circle {
+button.circle, a.circle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -29,7 +32,7 @@ button.circle {
   cursor: pointer;
 }
 
-button.black {
+button.black, a.black {
   border: 1px solid white;
   background-color: black;
   color: white;
