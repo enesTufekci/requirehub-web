@@ -12,7 +12,7 @@ const store = configureStore();
 
 const App = () => (
   <Provider store={store}>
-    <div className="App">
+    <div className="app-container">
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
