@@ -4,6 +4,13 @@
 a {
   text-decoration: none;
 }
+textarea {
+  resize: none;
+  width: 100%;
+  text-indent: 10px;
+  border:none;
+  padding-top:10px;
+}
 
 input {
   width: 100%;
@@ -12,7 +19,7 @@ input {
   text-indent: 10px;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
 }
 
@@ -37,4 +44,21 @@ button.black, a.black {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+form div.form-group {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+  margin-bottom: 15px;
+}
+
+
+form div.form-group .label {
+  display: block;
+  color: red;
+}
+
+form button.form-submit {
+  float: right;
 }
