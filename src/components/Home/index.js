@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 class Home extends Component {
@@ -8,8 +8,8 @@ class Home extends Component {
       <div className="home-container">
         <div className="case-list">
           <div className="case-item case-item-new">
-            <input type="text" placeholder="My First Requirement"/>
-            <button className="circle black">+</button>
+            <span>My First Requirement</span>
+            <Link to="/requirement/create" className="circle black">+</Link>
           </div>
         </div>
       </div>
