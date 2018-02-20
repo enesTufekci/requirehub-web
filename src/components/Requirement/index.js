@@ -1,14 +1,3 @@
-import React, { Component } from 'react';
-
-class Requirement extends Component {
-  render() {
-    const { match } = this.props;
-    return (
-      <div>
-        Case { match.params.id }
-      </div>
-    );
-  }
-}
+import Requirement from './Requirement';
 
 export default Requirement;
