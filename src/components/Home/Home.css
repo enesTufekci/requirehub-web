@@ -14,11 +14,17 @@
 
 .case-item {
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+  margin-bottom: 10px;
 }
 
 .case-item-new {
   position: relative;
   border: 1px dashed #333;
+}
+
+.case-item a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .case-item-new a {
@@ -30,10 +36,14 @@
   bottom: -20px;
 }
 
+.case-item span,
 .case-item-new span {
   display: block;
   font-weight: lighter;
   line-height: 36px;
   padding-left: 10px;
+}
+
+.case-item-new span {
   font-style: italic; 
 }
