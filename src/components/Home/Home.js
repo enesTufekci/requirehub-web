@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -15,6 +16,10 @@ class Home extends Component {
       </div>
     );
   }
+}
+
+Home.propTypes = {
+  requirements: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Home;
