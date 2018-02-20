@@ -9,9 +9,7 @@ describe('Home Component', () => {
     expect(wrapper.find('.case-item-new').length).toEqual(1);
     
     const newCaseItem = wrapper.find('.case-item-new');
-    expect(newCaseItem.find('input').length).toEqual(1);
-    expect(newCaseItem.find('button').length).toEqual(1);
-    expect(newCaseItem.find('button').hasClass('circle black')).toBe(true);
-    expect(newCaseItem.find('input').props().placeholder).toEqual('My First Requirement');
+    expect(newCaseItem.find('span').length).toEqual(1);
+    expect(newCaseItem.find('.circle.black').length).toEqual(1);
   });
 });
