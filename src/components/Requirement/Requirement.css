@@ -1,0 +1,11 @@
+.requirement-container {
+  display:flex;
+  justify-content: center;
+}
+
+.requirement-form {
+  flex: 0 0 600px;
+  margin: 15px;
+  padding: 15px;
+}
+  
