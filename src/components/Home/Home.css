@@ -34,6 +34,6 @@
   display: block;
   font-weight: lighter;
   line-height: 36px;
-  text-indent: 10px;
+  padding-left: 10px;
   font-style: italic; 
 }

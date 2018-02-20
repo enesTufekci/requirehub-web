@@ -1,14 +1,6 @@
-import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class Requirement extends Component {
-  render() {
-    const { match } = this.props;
-    return (
-      <div>
-        Case { match.params.id }
-      </div>
-    );
-  }
-}
+import { createRequirement } from '../../appReducer';
+import Requirement from './Requirement';
 
-export default Requirement;
+export default connect(null, { createRequirement })(Requirement);
