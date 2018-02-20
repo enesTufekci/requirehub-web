@@ -7,8 +7,8 @@ a {
 textarea {
   resize: none;
   width: 100%;
-  text-indent: 10px;
-  border:none;
+  padding-left: 10px;
+  border: none;
   padding-top:10px;
 }
 
@@ -16,7 +16,7 @@ input {
   width: 100%;
   border: none;
   height: 32px;
-  text-indent: 10px;
+  padding-left: 10px;
 }
 
 input:focus, textarea:focus {
