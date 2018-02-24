@@ -1,11 +1,64 @@
-.App {
-  text-align: center;
+.app-container {
+  padding: 15px;
+}
+a {
+  text-decoration: none;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  padding-left: 10px;
+  border: none;
+  padding-top:10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+input {
+  width: 100%;
+  border: none;
+  height: 32px;
+  padding-left: 10px;
 }
 
-.App-intro {
-  font-size: large;
+input:focus, textarea:focus {
+  outline: none;
+}
+
+input.dashed {
+  border: 1px dashed black;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.circle, a.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+button.black, a.black {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+form div.form-group {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);
+  margin-bottom: 15px;
+}
+
+
+form div.form-group .label {
+  display: block;
+  color: red;
+}
+
+form button.form-submit {
+  float: right;
 }

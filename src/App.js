@@ -1,19 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import configureStore from './store/configureStore';
+import Home from './components/Home';
+import Requirement from './components/Requirement';
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1 className="App-title">Welcome to RequireHub.com</h1>
-        </header>
-        <p className="App-intro">
-          To help engineers find work while lowering the cost of development, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const store = configureStore();
+
+const App = () => (
+  <Provider store={store}>
+    <div className="app-container">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/requirement/create" component={Requirement} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  </Provider>
+)
 
 export default App;
