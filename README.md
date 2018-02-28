@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="475" alt="RequireHub" src="https://user-images.githubusercontent.com/12200465/36760653-97eb3b70-1bd0-11e8-9419-294d233c79a1.png">
+</p>
+
 # RequireHub.com  
 Where Software Requirements = Expected Results delivered by the world's developers.   
 
