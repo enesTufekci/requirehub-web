@@ -1,6 +1,7 @@
 module.exports = {
     "extends": [
         "standard",
-        "prettier-standard"
+        "standard-react",
+        "prettier-standard",
     ]
 };
