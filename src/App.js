@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-import configureStore from './store/configureStore';
-import Home from './components/Home';
-import Requirement from './components/Requirement';
+import configureStore from './store/configureStore'
+import Home from './components/Home'
+import Requirement from './components/Requirement'
 
-import './App.css';
+import './App.css'
 
-const store = configureStore();
+const store = configureStore()
 
 const App = () => (
   <Provider store={store}>
@@ -23,4 +23,4 @@ const App = () => (
   </Provider>
 )
 
-export default App;
+export default App
