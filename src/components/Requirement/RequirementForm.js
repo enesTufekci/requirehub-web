@@ -25,13 +25,13 @@ class RequirementForm extends Component {
     return (
       <form className="requirement-form">
         <div className="form-group">
-          <input type="text" name="title" onChange={this.handleUpdate} placeholder="Title"/>
+          <input type="text" requirement="title-input" name="title" onChange={this.handleUpdate} placeholder="Title"/>
         </div>
         <div className="form-group">
-          <textarea type="text" rows="5" name="steps" onChange={this.handleUpdate} placeholder="Steps"></textarea>
+          <textarea type="text" requirement="steps-input" rows="5" name="steps" onChange={this.handleUpdate} placeholder="Steps"></textarea>
         </div>
         <div className="form-group">
-          <input type="text" name="expected" onChange={this.handleUpdate} placeholder="Expected"/>
+          <input type="text" requirement="expected-input" name="expected" onChange={this.handleUpdate} placeholder="Expected"/>
         </div>
         <button className="form-submit circle black" onClick={this.handleSubmit}>+</button>
       </form>
