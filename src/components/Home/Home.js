@@ -8,7 +8,7 @@ class Home extends Component {
     const { requirements } = this.props;
     const requirementList = requirements.map((requirement) => 
       (
-        <div className="case-item">
+        <div className="case-item" key={requirement.id}>
           <Link to={`/requirement/${requirement.id}`} className="requirement-item">
             <span>{ requirement.title}</span>
           </Link>
