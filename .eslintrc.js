@@ -12,7 +12,8 @@ module.exports = {
 		"jest/no-focused-tests": "error",
 		"jest/no-identical-title": "error",
 		"jest/prefer-to-have-length": "warn",
-		"jest/valid-expect": "error"
+		"jest/valid-expect": "error",
+		'import/no-unresolved': 'error',
 	},
 	"env": {
 		"jest/globals": true
@@ -23,4 +24,11 @@ module.exports = {
 			"jsx": true
 		}
 	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"moduleDirectory": ["node_modules", "/"]
+			}
+		}
+}
 };
