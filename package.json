@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint **/*.{js,jsx}",
+    "lint": "eslint ./src/**/*.{js,jsx}",
     "precommit:lint": "yarn lint --fix",
     "precommit:test": "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests ./src/**/*.js"
   },
