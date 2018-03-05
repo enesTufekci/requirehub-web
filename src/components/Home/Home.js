@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+
+import CaseHeader from './CaseHeader'
+import ProjectList from './ProjectList'
+
 import './Home.css'
 
 class Home extends Component {
@@ -18,6 +22,8 @@ class Home extends Component {
     return (
       <div className="home-container">
         <div className="case-list">
+          <CaseHeader />
+          <ProjectList />
           {requirementList}
           <div className="case-item case-item-new">
             <span>
