@@ -37,8 +37,10 @@ class ProjectList extends React.Component {
         <div className="project-link">
           <TextField
             id="project-link"
+            style={{ cursor: 'pointer' }}
             fullWidth
             readOnly
+            onClick={e => window.open(e.target.value, '_blank')}
             value={
               this.state.projects.find(project => project.id === selectedId)
                 .link
