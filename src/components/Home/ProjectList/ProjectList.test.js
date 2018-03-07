@@ -1,49 +1,54 @@
 import React from 'react'
-import { mount } from 'enzyme'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { SelectField, TextField } from 'material-ui'
-
+import { createShallow } from 'material-ui/test-utils'
+import { MenuItem } from 'material-ui/Menu'
+import { Select, Button } from 'material-ui'
 import ProjectList from './index'
-describe('ProjectList Component', () => {
-  const wrapper = mount(
-    <MuiThemeProvider>
-      <ProjectList />
-    </MuiThemeProvider>
-  )
-  const mockState = {
-    selectedId: 1,
-    projects: [
-      {
-        id: 1,
-        title: 'Server',
-        link: 'https://github.com/mxfactorial/requirehub'
-      },
-      {
-        id: 2,
-        title: 'Client',
-        link: 'https://github.com/mxfactorial/requirehub-web'
-      }
-    ]
-  }
-  wrapper.setState(mockState)
-  it('should render text field correctly', () => {
-    // const textField = wrapper.find('#project-link').get(0)
-    expect(wrapper.find('.project-link').find(TextField)).toHaveLength(1)
-    const textField = wrapper
-      .find('.project-link')
-      .find(TextField)
-      .get(0)
-    expect(textField.props.readOnly).toBe(true)
-    expect(textField.props.fullWidth).toBe(true)
-    expect(textField.props.value).toBe(
-      'https://github.com/mxfactorial/requirehub'
-    )
+
+describe('<ProjectList />', () => {
+  let shallow
+  beforeAll(() => {
+    shallow = createShallow()
   })
-  it('should render project list correctly', () => {
-    expect(wrapper.find(SelectField)).toHaveLength(1)
-    const projectSelect = wrapper.find(SelectField).get(0)
-    expect(projectSelect.props.floatingLabelText).toBe('Project')
-    expect(projectSelect.props.autoWidth).toBe(true)
-    expect(projectSelect.props.value).toBe(1)
+
+  afterAll(() => {
+    shallow.cleanUp()
+  })
+  it('should render link correctly', () => {
+    const wrapper = shallow(<ProjectList />)
+    const linkButton = wrapper.find('.project-link').find(Button)
+    expect(linkButton).toHaveLength(1)
+    expect(linkButton.prop('target')).toEqual('_blank')
+    expect(linkButton.prop('href')).toEqual(wrapper.state().projects[0].url)
+  })
+  it('should render select correctly', () => {
+    const wrapper = shallow(<ProjectList />)
+    const select = wrapper.find(Select)
+    expect(select).toHaveLength(1)
+    expect(select.find(MenuItem)).toHaveLength(wrapper.state().projects.length)
+  })
+  test('handleChange should update state, link href', () => {
+    const wrapper = shallow(<ProjectList />)
+    let component = wrapper.instance()
+    const { handleChange } = component
+    const mockUrl = 'mockUrl'
+    const mockOpen = jest.fn()
+    global.open = mockOpen
+    handleChange({ target: { value: mockUrl } })
+    expect(wrapper.state().value).toBe(mockUrl)
+    wrapper.update()
+    const linkButton = wrapper.find('.project-link').find(Button)
+    expect(linkButton.prop('href')).toEqual(mockUrl)
+    expect(mockOpen.mock.calls).toEqual([[mockUrl, '_blank']])
+  })
+  test('handleChange should be called when select change', () => {
+    const wrapper = shallow(<ProjectList />)
+    let component = wrapper.instance()
+    const mockFn = jest.fn()
+    component.handleChange = mockFn
+    component.forceUpdate()
+    wrapper.update()
+    const select = wrapper.find(Select)
+    select.simulate('change')
+    expect(mockFn).toHaveBeenCalled()
   })
 })

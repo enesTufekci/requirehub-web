@@ -1,66 +1,59 @@
 import React from 'react'
-
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
-import TextField from 'material-ui/TextField'
+import { MenuItem } from 'material-ui/Menu'
+import { Select, Button } from 'material-ui'
 
 import './ProjectList.css'
 
 class ProjectList extends React.Component {
   state = {
-    selectedId: 1,
     projects: [
       {
         id: 1,
         title: 'Server',
-        link: 'https://github.com/mxfactorial/requirehub'
+        url: 'https://github.com/mxfactorial/requirehub'
       },
       {
         id: 2,
         title: 'Client',
-        link: 'https://github.com/mxfactorial/requirehub-web'
+        url: 'https://github.com/mxfactorial/requirehub-web'
       }
-    ]
+    ],
+    value: null
   }
-  handleChange = (event, index, selectedId) => {
-    this.setState({ selectedId })
-    window.open(
-      this.state.projects.find(project => project.id === selectedId).link,
-      '_blank'
-    )
+
+  handleChange = event => {
+    const { value } = event.target
+    this.setState({ value })
+    window.open(value, '_blank')
   }
   render() {
-    const { selectedId, projects } = this.state
-
+    const { projects } = this.state
+    const selectedUrl = this.state.value || this.state.projects[0].url
     return (
       <div className="project-list-container">
         <div className="project-link">
-          <TextField
-            id="project-link"
-            style={{ cursor: 'pointer' }}
-            fullWidth
-            readOnly
-            onClick={e => window.open(e.target.value, '_blank')}
-            value={
-              this.state.projects.find(project => project.id === selectedId)
-                .link
-            }
-          />
+          <Button
+            target="_blank"
+            variant="raised"
+            href={selectedUrl}
+            style={{ textTransform: 'none', width: '90%', textAlign: 'left' }}>
+            {selectedUrl}
+          </Button>
         </div>
         <div className="project-dropdown">
-          <SelectField
-            floatingLabelText="Project"
-            value={selectedId}
+          <Select
+            value={selectedUrl}
             onChange={this.handleChange}
-            autoWidth>
+            autoWidth
+            inputProps={{
+              name: 'project'
+            }}>
             {projects.map(project => (
-              <MenuItem
-                key={project.id}
-                value={project.id}
-                primaryText={project.title}
-              />
+              <MenuItem key={project.id} value={project.url}>
+                {project.title}
+              </MenuItem>
             ))}
-          </SelectField>
+          </Select>
         </div>
       </div>
     )
