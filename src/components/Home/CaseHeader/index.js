@@ -1,5 +1,5 @@
 import React from 'react'
-import requireHubLogo from 'assets/images/requirehub-logo-white.png'
+import requireHubLogo from 'assets/images/requirehub-logo.png'
 import gitHubLogo from 'assets/images/github-logo.png'
 
 import './CaseHeader.css'
