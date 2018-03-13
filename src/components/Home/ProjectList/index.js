@@ -37,13 +37,7 @@ class ProjectList extends React.Component {
           </a>
         </div>
         <div className="project-dropdown">
-          <Select
-            value={selectedUrl}
-            onChange={this.handleChange}
-            autoWidth
-            inputProps={{
-              name: 'project'
-            }}>
+          <Select value={selectedUrl} onChange={this.handleChange} autoWidth>
             {projects.map(project => (
               <MenuItem key={project.id} value={project.url}>
                 {project.title}
