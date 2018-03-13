@@ -1,6 +1,6 @@
 import React from 'react'
 import { MenuItem } from 'material-ui/Menu'
-import { Select, Button } from 'material-ui'
+import { Select } from 'material-ui'
 
 import './ProjectList.css'
 
@@ -32,13 +32,9 @@ class ProjectList extends React.Component {
     return (
       <div className="project-list-container">
         <div className="project-link">
-          <Button
-            target="_blank"
-            variant="raised"
-            href={selectedUrl}
-            style={{ textTransform: 'none', width: '90%', textAlign: 'left' }}>
+          <a href={selectedUrl} target="_blank">
             {selectedUrl}
-          </Button>
+          </a>
         </div>
         <div className="project-dropdown">
           <Select
