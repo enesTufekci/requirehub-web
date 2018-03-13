@@ -1,7 +1,7 @@
 import React from 'react'
 import { createShallow } from 'material-ui/test-utils'
 import { MenuItem } from 'material-ui/Menu'
-import { Select, Button } from 'material-ui'
+import { Select } from 'material-ui'
 import ProjectList from './index'
 
 describe('<ProjectList />', () => {
@@ -15,7 +15,7 @@ describe('<ProjectList />', () => {
   })
   it('should render link correctly', () => {
     const wrapper = shallow(<ProjectList />)
-    const linkButton = wrapper.find('.project-link').find(Button)
+    const linkButton = wrapper.find('.project-link').find('a')
     expect(linkButton).toHaveLength(1)
     expect(linkButton.prop('target')).toEqual('_blank')
     expect(linkButton.prop('href')).toEqual(wrapper.state().projects[0].url)
@@ -36,7 +36,7 @@ describe('<ProjectList />', () => {
     handleChange({ target: { value: mockUrl } })
     expect(wrapper.state().value).toBe(mockUrl)
     wrapper.update()
-    const linkButton = wrapper.find('.project-link').find(Button)
+    const linkButton = wrapper.find('.project-link').find('a')
     expect(linkButton.prop('href')).toEqual(mockUrl)
     expect(mockOpen.mock.calls).toEqual([[mockUrl, '_blank']])
   })
