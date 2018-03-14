@@ -10,7 +10,7 @@ const CaseHeader = () => {
       <div className="case-header-item">
         <img src={requireHubLogo} alt="RequireHub Logo" />
       </div>
-      <div className="case-header-item">
+      <div className="case-header-item case-header-item-shrink">
         <span>on</span>
       </div>
       <div className="case-header-item">
