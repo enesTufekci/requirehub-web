@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import requireHubLogo from 'assets/images/requirehub-logo-white.png'
+import requireHubLogo from 'assets/images/requirehub-logo.png'
 import gitHubLogo from 'assets/images/github-logo.png'
 
 import CaseHeader from './index'
