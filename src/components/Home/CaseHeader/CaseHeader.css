@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: center;
 }
+.case-header-item-shrink {
+  flex: 0 1 auto;
+  padding: 0 10px;
+}
 
 .case-header-item img {
   width: 100%;
