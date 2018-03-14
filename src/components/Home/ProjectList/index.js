@@ -24,7 +24,6 @@ class ProjectList extends React.Component {
   handleChange = event => {
     const { value } = event.target
     this.setState({ value })
-    window.open(value, '_blank')
   }
   render() {
     const { projects } = this.state

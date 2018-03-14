@@ -31,14 +31,11 @@ describe('<ProjectList />', () => {
     let component = wrapper.instance()
     const { handleChange } = component
     const mockUrl = 'mockUrl'
-    const mockOpen = jest.fn()
-    global.open = mockOpen
     handleChange({ target: { value: mockUrl } })
     expect(wrapper.state().value).toBe(mockUrl)
     wrapper.update()
     const linkButton = wrapper.find('.project-link').find('a')
     expect(linkButton.prop('href')).toEqual(mockUrl)
-    expect(mockOpen.mock.calls).toEqual([[mockUrl, '_blank']])
   })
   test('handleChange should be called when select change', () => {
     const wrapper = shallow(<ProjectList />)
