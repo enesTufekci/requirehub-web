@@ -1,0 +1,20 @@
+.case-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.case-header-item {
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-header-item img {
+  width: 100%;
+}
+
+.case-header-item span {
+  font-size: 48px;
+}

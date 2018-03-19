@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+
+import CaseHeader from './CaseHeader'
+import ProjectList from './ProjectList'
+
 import './Home.css'
 
 class Home extends Component {
@@ -16,21 +20,29 @@ class Home extends Component {
       </div>
     ))
     return (
-      <div className="home-container">
-        <div className="case-list">
-          {requirementList}
-          <div className="case-item case-item-new">
-            <span>
-              {requirementList.length > 0
-                ? 'Create New Requirement'
-                : 'My First Requirement'}
-            </span>
-            <Link to="/requirement/create" className="circle black">
-              +
-            </Link>
+      <React.Fragment>
+        <div className="header">
+          <div className="header-container">
+            <CaseHeader />
+            <ProjectList />
           </div>
         </div>
-      </div>
+        <div className="home-container">
+          <div className="case-list">
+            {requirementList}
+            <div className="case-item case-item-new">
+              <span>
+                {requirementList.length > 0
+                  ? 'Create New Requirement'
+                  : 'My First Requirement'}
+              </span>
+              <Link to="/requirement/create" className="circle black">
+                +
+              </Link>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
     )
   }
 }
