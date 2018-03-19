@@ -28,6 +28,7 @@ class ProjectList extends React.Component {
   render() {
     const { projects } = this.state
     const selectedUrl = this.state.value || this.state.projects[0].url
+    const style = { "font-size": 10 }
     return (
       <div className="project-list-container">
         <div className="project-link">
@@ -36,9 +37,9 @@ class ProjectList extends React.Component {
           </a>
         </div>
         <div className="project-dropdown">
-          <Select value={selectedUrl} onChange={this.handleChange} autoWidth>
+          <Select value={selectedUrl} onChange={this.handleChange} style={style}>
             {projects.map(project => (
-              <MenuItem key={project.id} value={project.url}>
+              <MenuItem key={project.id} value={project.url} style={style}>
                 {project.title}
               </MenuItem>
             ))}
