@@ -7,15 +7,9 @@ import './CaseHeader.css'
 const CaseHeader = () => {
   return (
     <div className="case-header">
-      <div className="case-header-item">
-        <img src={requireHubLogo} alt="RequireHub Logo" />
-      </div>
-      <div className="case-header-item">
-        <span>on</span>
-      </div>
-      <div className="case-header-item">
-        <img src={gitHubLogo} alt="Github Logo" />
-      </div>
+        <img className="case-header-requirehub" src={requireHubLogo} alt="RequireHub Logo" />
+        <span className="case-header-on"> on </span>
+        <img className="case-header-github" src={gitHubLogo} alt="Github Logo" />
     </div>
   )
 }
