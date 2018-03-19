@@ -28,7 +28,7 @@ class ProjectList extends React.Component {
   render() {
     const { projects } = this.state
     const selectedUrl = this.state.value || this.state.projects[0].url
-    const style = { "font-size": 10 }
+    const style = { fontSize : 10 }
     return (
       <div className="project-list-container">
         <div className="project-link">
