@@ -10,8 +10,9 @@ import './Home.css'
 class Home extends Component {
   render() {
     const { requirements } = this.props
-    const requirementList = requirements.map(requirement => (
-      <div className="case-item" key={requirement.id}>
+    const requirementList = requirements.map((requirement, index) => (
+      <div className="case-item" key={index}>
+        <div className="case-item-key">{index + 1}</div>
         <Link
           to={`/requirement/${requirement.id}`}
           className="requirement-item">
