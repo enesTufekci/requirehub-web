@@ -16,7 +16,7 @@ class Home extends Component {
           requirement="requirement-key"
           className="case-item-key">{index + 1}</div>
         <Link
-          to={`/requirement/${requirement.id}`}
+          to={`/requirement/edit/${requirement.uuid}`}
           className="requirement-item">
           <span requirement="requirement-title">{requirement.title}</span>
         </Link>
@@ -54,7 +54,14 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  requirements: PropTypes.arrayOf(PropTypes.object).isRequired
+  requirements: PropTypes.arrayOf(
+    PropTypes.shape({
+      uuid: PropTypes.string,
+      title: PropTypes.string,
+      steps: PropTypes.string,
+      expected: PropTypes.string
+    })
+  ).isRequired
 }
 
 export default Home
