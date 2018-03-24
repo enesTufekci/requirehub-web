@@ -24,6 +24,19 @@ describe('Home Component', () => {
     expect(wrapper.find('.case-item')).toHaveLength(
       props.requirements.length + 1
     )
+    expect(
+      wrapper
+        .find('.case-item')
+        .first()
+        .find('.case-item-key')
+    ).toHaveLength(1)
+    expect(
+      wrapper
+        .find('.case-item')
+        .first()
+        .find('.case-item-key')
+        .text()
+    ).toBe('1')
   })
   it('should render addRequirement placeholder correctly', () => {
     let props = {
