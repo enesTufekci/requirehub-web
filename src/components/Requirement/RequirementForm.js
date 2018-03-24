@@ -3,15 +3,24 @@ import PropTypes from 'prop-types'
 
 class RequirementForm extends Component {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    values: PropTypes.shape({
+      title: PropTypes.string,
+      steps: PropTypes.string,
+      expected: PropTypes.string
+    })
+  }
+
+  static defaultProps = {
+    values: {
+      title: '',
+      steps: '',
+      expected: ''
+    }
   }
 
   state = {
-    values: {
-      title: null,
-      steps: null,
-      expected: null
-    }
+    values: { ...this.props.values }
   }
 
   handleUpdate = e => {
@@ -27,6 +36,7 @@ class RequirementForm extends Component {
   }
 
   render() {
+    const { title, steps, expected } = this.state.values
     return (
       <form className="requirement-form">
         <div className="form-group">
@@ -34,6 +44,7 @@ class RequirementForm extends Component {
             type="text"
             requirement="title-input"
             name="title"
+            value={title}
             onChange={this.handleUpdate}
             placeholder="Title"
           />
@@ -44,6 +55,7 @@ class RequirementForm extends Component {
             requirement="steps-input"
             rows="5"
             name="steps"
+            value={steps}
             onChange={this.handleUpdate}
             placeholder="Steps"
           />
@@ -53,6 +65,7 @@ class RequirementForm extends Component {
             type="text"
             requirement="expected-input"
             name="expected"
+            value={expected}
             onChange={this.handleUpdate}
             placeholder="Expected"
           />
