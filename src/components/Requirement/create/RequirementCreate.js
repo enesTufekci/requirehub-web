@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import RequirementForm from '../RequirementForm'
-import '../Requirement.css'
 
 class Requirement extends Component {
   handleCreateRequirement = values => {
