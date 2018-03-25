@@ -1,4 +1,4 @@
-import { CREATE_REQUIREMENT } from './actionTypes'
+import { CREATE_REQUIREMENT } from 'common/actionTypes'
 
 export const createRequirement = requirement => ({
   type: CREATE_REQUIREMENT,
