@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 
 import RequirementCreate from '../RequirementCreate'
-import RequirementForm from '../../RequirementForm'
+import RequirementForm from '../../common/RequirementForm'
 
 describe('Requirement Component', () => {
   const mockPush = jest.fn()
