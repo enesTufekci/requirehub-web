@@ -1,19 +1,9 @@
-import { CREATE_REQUIREMENT } from 'common/actionTypes'
-
-export const createRequirement = requirement => ({
-  type: CREATE_REQUIREMENT,
-  payload: requirement
-})
-
 const ACTION_HANDLERS = {
-  CREATE_REQUIREMENT: (state, action) => ({
-    ...state,
-    requirements: [...state.requirements, action.payload]
-  })
+  //
 }
 
 const initialState = {
-  requirements: []
+  user: {}
 }
 
 const appReducer = (state = initialState, action) => {
