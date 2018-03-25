@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import ReactRouterPropTypes from 'react-router-prop-types'
 
 import { Switch, Route } from 'react-router-dom'
 import RequirementCreate from './create'
@@ -14,7 +14,7 @@ const Requirement = ({ match }) => {
 }
 
 Requirement.propTypes = {
-  match: PropTypes.object.isRequired
+  match: ReactRouterPropTypes.match.isRequired
 }
 
 export default Requirement
