@@ -20,7 +20,7 @@ const App = () => (
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/requirement/create" component={Requirement} />
+            <Route path="/requirement" component={Requirement} />
           </Switch>
         </BrowserRouter>
       </div>
