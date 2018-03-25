@@ -17,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "e2e": "jest --forceExit e2e",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "precommit:lint": "yarn lint --fix",
@@ -48,6 +49,7 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.11.1",
     "prettier-standard": "^8.0.0",
+    "puppeteer": "^1.2.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-mock-store": "^1.5.1"
   }

@@ -37,7 +37,10 @@ class Home extends Component {
                   ? 'Create New Requirement'
                   : 'My First Requirement'}
               </span>
-              <Link to="/requirement/create" className="circle black">
+              <Link
+                requirement="add-requirement-button"
+                to="/requirement/create"
+                className="circle black">
                 +
               </Link>
             </div>
