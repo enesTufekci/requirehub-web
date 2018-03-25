@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import RequirementForm from '../RequirementForm'
+import RequirementForm from '../common/RequirementForm'
 
 describe('RequirementForm', () => {
   it('should be rendered correctly', () => {
