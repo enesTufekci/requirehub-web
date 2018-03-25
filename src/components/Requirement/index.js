@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Switch, Route } from 'react-router-dom'
 import RequirementCreate from './create'
+import './Requirement.css'
 
 const Requirement = ({ match }) => {
   return (
