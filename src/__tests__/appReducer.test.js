@@ -1,5 +1,5 @@
 // import configureMockStore from 'redux-mock-store'
-import { CREATE_REQUIREMENT } from '../actionTypes'
+import { CREATE_REQUIREMENT } from 'common/actionTypes'
 import appReducer, { createRequirement } from '../appReducer'
 
 // const middlewares = []
