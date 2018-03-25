@@ -1,6 +1,19 @@
-import { connect } from 'react-redux'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { createRequirement } from '../../appReducer'
-import Requirement from './Requirement'
+import { Switch, Route } from 'react-router-dom'
+import RequirementCreate from './create'
 
-export default connect(null, { createRequirement })(Requirement)
+const Requirement = ({ match }) => {
+  return (
+    <Switch>
+      <Route path={`${match.url}/create`} component={RequirementCreate} />
+    </Switch>
+  )
+}
+
+Requirement.propTypes = {
+  match: PropTypes.object.isRequired
+}
+
+export default Requirement
