@@ -6,7 +6,7 @@ export const createRequirement = requirement => ({
 })
 
 const ACTION_HANDLERS = {
-  CREATE_REQUIREMENT: (state, action) => ({
+  [CREATE_REQUIREMENT]: (state, action) => ({
     ...state,
     requirements: [...state.requirements, action.payload]
   })
