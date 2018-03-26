@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "e2e": "jest --forceExit e2e",
+    "e2e": "jest e2e",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "precommit:lint": "yarn lint --fix",
