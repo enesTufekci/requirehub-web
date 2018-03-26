@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer')
 const BASE_URL = 'http://localhost:3000'
 let browser
 let page
+const waitOpts = { waitUntil: 'load' }
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
@@ -28,4 +29,13 @@ test('add-requirement-button displays on home', async () => {
 			btn => btn.jsonValue()
 		)
 	expect(addRequirementButtonCopy).toBe('+')
+})
+
+test('requirement-key displays on home after adding requirement', async () => {
+	await page.goto(BASE_URL)
+	await page.click('[requirement=add-requirement-button]')
+	await page.waitForSelector('[requirement=save-button]')
+	await page.click('[requirement=save-button]')
+	let attributeValue = await page.$$('[requirement=requirement-key]')
+	expect(attributeValue.length).toBeGreaterThan(0)
 })
