@@ -18,7 +18,7 @@ class Home extends Component {
         <Link
           to={`/requirement/${requirement.id}`}
           className="requirement-item">
-          <span>{requirement.title}</span>
+          <span requirement="requirement-title">{requirement.title}</span>
         </Link>
       </div>
     ))
