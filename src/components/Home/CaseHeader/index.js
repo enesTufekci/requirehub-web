@@ -1,8 +1,8 @@
 import React from 'react'
-import requireHubLogo from 'assets/images/requirehub-logo.png'
-import gitHubLogo from 'assets/images/github-logo.png'
-
 import './CaseHeader.css'
+
+const requireHubLogo = require('assets/images/requirehub-logo.png')
+const gitHubLogo = require('assets/images/github-logo.png')
 
 const CaseHeader = () => {
   return (
