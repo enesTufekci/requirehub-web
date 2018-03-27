@@ -12,11 +12,13 @@ class Home extends Component {
     const { requirements } = this.props
     const requirementList = requirements.map((requirement, index) => (
       <div className="case-item" key={index}>
-        <div className="case-item-key">{index + 1}</div>
+        <div
+          requirement="requirement-key"
+          className="case-item-key">{index + 1}</div>
         <Link
           to={`/requirement/${requirement.id}`}
           className="requirement-item">
-          <span>{requirement.title}</span>
+          <span requirement="requirement-title">{requirement.title}</span>
         </Link>
       </div>
     ))
@@ -37,7 +39,10 @@ class Home extends Component {
                   ? 'Create New Requirement'
                   : 'My First Requirement'}
               </span>
-              <Link to="/requirement/create" className="circle black">
+              <Link
+                requirement="add-requirement-button"
+                to="/requirement/create"
+                className="circle black">
                 +
               </Link>
             </div>
