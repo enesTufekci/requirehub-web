@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
+import { connect } from 'react-redux'
 
 import { Switch, Route } from 'react-router-dom'
 import RequirementCreate from './create'
@@ -19,4 +20,8 @@ Requirement.propTypes = {
   match: ReactRouterPropTypes.match.isRequired
 }
 
-export default Requirement
+const mapStateToProps = ({ requirement: { requirements } }) => ({
+  requirements
+})
+
+export default connect(mapStateToProps, null)(Requirement)
