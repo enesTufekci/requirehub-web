@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - 8
+env:
+  - NODE_PATH=src/
+dist: trusty
+addons:
+  chrome: stable
+  apt:
+    packages:
+      # This is required to run new chrome on old trusty
+      - libnss3
+cache:
+  directories:
+    - node_modules
+before_install:
+  # start your web application and listen on `localhost`
+  # - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+script:
+  - npm test
+  - npm run build
+  - npm install -g serve
+  - serve --single --silent --port 3000 build &
+  - npm run e2e-ci
