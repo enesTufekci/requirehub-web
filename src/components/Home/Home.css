@@ -35,7 +35,6 @@
   width: 28px;
   height: 34px;
   margin-left: -40px;
-  text-align: center;
   line-height: 34px;
 }
 
@@ -49,6 +48,8 @@
   text-decoration: none;
   color: inherit;
   margin-left: 6px;
+  display: flex;
+  width: 100%;
 }
 
 .case-item-new a {
