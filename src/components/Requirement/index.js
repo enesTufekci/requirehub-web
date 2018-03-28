@@ -14,12 +14,13 @@ const Requirement = ({ match, requirements }) => {
       <Route path={`${match.url}/create`} component={RequirementCreate} />
       <Route
         path={`${match.url}/edit/:id`}
-        render={({ match }) => {
+        render={({ match, history }) => {
           const requirement = requirements.filter(
             requirement => requirement.uuid === match.params.id
           )
           return (
             <RequirementEdit
+              history={history}
               requirement={requirement ? requirement[0] : null}
             />
           )
