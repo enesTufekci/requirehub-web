@@ -1,7 +1,5 @@
-import React from 'react'
+import { connect } from 'react-redux'
 
-const RequirementEdit = () => {
-  return <div>Edit</div>
-}
+import RequirementEdit from './RequirementEdit'
 
-export default RequirementEdit
+export default connect(null, null)(RequirementEdit)
