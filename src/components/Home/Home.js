@@ -12,12 +12,12 @@ class Home extends Component {
     const { requirements } = this.props
     const requirementList = requirements.map((requirement, index) => (
       <div className="case-item" key={index}>
-        <div
-          requirement="requirement-key"
-          className="case-item-key">{index + 1}</div>
         <Link
           to={`/requirement/edit/${requirement.uuid}`}
           className="requirement-item">
+          <span requirement="requirement-key" className="case-item-key">
+            {index + 1}
+          </span>
           <span requirement="requirement-title">{requirement.title}</span>
         </Link>
       </div>
