@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactRouterPropTypes from 'react-router-prop-types'
+import { Link } from 'react-router-dom'
+import CancelIcon from 'material-ui-icons/Cancel'
 import RequirementForm from '../common/RequirementForm'
 
 class RequirementEdit extends React.Component {
@@ -24,6 +26,11 @@ class RequirementEdit extends React.Component {
     return (
       <div className="requirement-container">
         <RequirementForm values={requirement} onSubmit={this.handleUpdate} />
+        <div className="cancel-button">
+          <Link style={{ float: 'right' }} to="/">
+            <CancelIcon style={{ color: '#333' }} />
+          </Link>
+        </div>
       </div>
     )
   }
