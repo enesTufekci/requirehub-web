@@ -11,12 +11,12 @@ describe('<RequirementEdit />', () => {
     steps: 'Mock Steps',
     expected: 'Mock Expected'
   }
-  const props = {
+  const mockProps = {
     requirement: requirementMock,
     updateRequirement: updateRequirementMock
   }
   it('should render edit form (with default values)', () => {
-    const wrapper = shallow(<RequirementEdit {...props} />)
+    const wrapper = shallow(<RequirementEdit {...mockProps} />)
     expect(wrapper.find(RequirementForm)).toHaveLength(1)
     expect(wrapper.find(RequirementForm).props().values).toEqual(
       requirementMock
