@@ -8,7 +8,7 @@ const waitOpts = { waitUntil: 'load' }
 beforeAll(async () => {
   browser = await puppeteer.launch({
   	args: ['--no-sandbox'],
-  	executablePath: 'google-chrome-unstable'
+  	executablePath: 'google-chrome'
   })
   page = await browser.newPage()
 })
