@@ -8,11 +8,23 @@ import RequirementCreate from './create'
 import RequirementEdit from './edit'
 import './Requirement.css'
 
-const Requirement = ({ match }) => {
+const Requirement = ({ match, requirements }) => {
   return (
     <Switch>
       <Route path={`${match.url}/create`} component={RequirementCreate} />
-      <Route path={`${match.url}/edit/:id`} component={RequirementEdit} />
+      <Route
+        path={`${match.url}/edit/:id`}
+        render={({ match }) => {
+          const requirement = requirements.filter(
+            requirement => requirement.uuid === match.params.id
+          )
+          return (
+            <RequirementEdit
+              requirement={requirement ? requirement[0] : null}
+            />
+          )
+        }}
+      />
     </Switch>
   )
 }
