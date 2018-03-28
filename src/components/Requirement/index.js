@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { Switch, Route } from 'react-router-dom'
@@ -17,7 +18,8 @@ const Requirement = ({ match }) => {
 }
 
 Requirement.propTypes = {
-  match: ReactRouterPropTypes.match.isRequired
+  match: ReactRouterPropTypes.match.isRequired,
+  requirements: PropTypes.arrayOf(PropTypes.object)
 }
 
 const mapStateToProps = ({ requirement: { requirements } }) => ({
