@@ -21,7 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "e2e": "jest e2e",
     "e2e-ci": "jest --forceExit e2e",
-    "start-stop-ci":"start-server-and-test start http://localhost:3000 e2e-ci",
+    "start-stop-ci": "start-server-and-test start http://localhost:3000 e2e-ci",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "precommit:lint": "yarn lint --fix",
