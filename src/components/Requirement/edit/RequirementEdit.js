@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import RequirementForm from '../common/RequirementForm'
 
 const RequirementEdit = ({ requirement }) => {
-  return <div>Edit {requirement.uuid}</div>
+  return (
+    <div className="requirement-container">
+      <RequirementForm values={requirement} onSubmit={() => {}} />
+    </div>
+  )
 }
 
 RequirementEdit.propTypes = {
