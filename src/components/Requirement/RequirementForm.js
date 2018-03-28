@@ -58,6 +58,7 @@ class RequirementForm extends Component {
           />
         </div>
         <button
+          requirement="save-button"
           className="form-submit circle black"
           onClick={this.handleSubmit}>
           +

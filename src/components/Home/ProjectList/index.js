@@ -31,12 +31,12 @@ class ProjectList extends React.Component {
     const style = { fontSize : 10 }
     return (
       <div className="project-list-container">
-        <div className="project-link">
+        <div requirement="project-dropdown-menu-box" className="project-link">
           <a href={selectedUrl} target="_blank">
             {selectedUrl}
           </a>
         </div>
-        <div className="project-dropdown">
+        <div requirement="project-dropdown-menu-button" className="project-dropdown">
           <Select value={selectedUrl} onChange={this.handleChange} style={style}>
             {projects.map(project => (
               <MenuItem key={project.id} value={project.url} style={style}>
