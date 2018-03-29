@@ -17,7 +17,7 @@ test('React App browser title displays', async () => {
   await page.goto(BASE_URL)
   let browserTitle = await page.title()
   expect(browserTitle).toBe('React App')
-})
+}, 10000)
 
 test('GitHub repo content displays', async () => {
 	await page.goto(BASE_URL)
